@@ -1,0 +1,389 @@
+<script>
+  $(document).ready(function(){
+   $("input").change(function(){
+   var classParent=$(this).parent().attr('class');
+   var total = 0;
+   //console.log("current element: "+classParent);
+  if(classParent!=null)
+  {
+   try
+   {
+   var rowsCell=document.getElementsByClassName(classParent);
+   for(var i=0;i<rowsCell.length;i++)
+   {
+    var currentValue=parseInt(rowsCell[i].childNodes.item(0).value);
+    if (!isNaN(currentValue)){
+      total+=currentValue;
+    }
+   }
+   document.getElementById("total_"+classParent).innerHTML =total;
+   }
+   catch(ex)
+   {
+      console.log("Error: "+ex);
+   }
+  }          
+   });
+  //function to compute total during first page load
+  $("#IndexTesting tbody tr td input").each(function(){
+                      var classParent=$(this).parent().attr('class');
+                      if(classParent!=null)
+                      {
+                          console.log("parent: "+classParent);
+                          if(classParent.includes("row"))
+                          {
+                              var total = 0;
+                              console.log("this parent include row");
+                              try
+                              {
+                                  var rowsCell=document.getElementsByClassName(classParent);
+                                  //console.log(rowsCell);
+                                  
+                                  for(var i=0;i<rowsCell.length;i++)
+                                  {
+                                      
+                                      var currentValue=parseInt(rowsCell[i].childNodes.item(0).value);
+                                      console.log("current value :"+rowsCell[i].childNodes.item(0).value);
+                                      if (!isNaN(currentValue)){
+                                       total+=currentValue;
+                                      }
+                                  }
+                                  document.getElementById("total_"+classParent).innerHTML =total;
+                              }
+                              catch(ex)
+                              {
+                                  console.log("Error: "+ex);
+                              }
+                          }
+                      }
+                      
+                      
+                  });//End of indexTesting.each
+  $("#buttonTotal").click(function()
+  {
+   $("#IndexTesting tbody tr td input").each(function(){
+            var classParent=$(this).parent().attr('class');
+            if(classParent!=null)
+            {
+              console.log("parent: "+classParent);
+              if(classParent.includes("row"))
+              {
+                var total = 0;
+                console.log("this parent include row");
+                try
+                {
+                  var rowsCell=document.getElementsByClassName(classParent);
+                  //console.log(rowsCell);
+                  
+                  for(var i=0;i<rowsCell.length;i++)
+                  {
+                    
+                    var currentValue=parseInt(rowsCell[i].childNodes.item(0).value);
+                                      console.log("current value :"+rowsCell[i].childNodes.item(0).value);
+                      if (!isNaN(currentValue)){
+                     total+=currentValue;
+                      }
+                  }
+                  document.getElementById("total_"+classParent).innerHTML =total;
+                }
+                catch(ex)
+                {
+                  console.log("Error: "+ex);
+                }
+              }
+            }
+            
+            
+          });//end of IndexTesting.each function
+  });//end of button click
+  });//end of ready
+  
+  
+  </script>
+  <style type="text/css">td input
+  {
+   width:50px;
+   fl
+  }
+  </style>
+  <table border="1" cellpadding="1" cellspacing="1" id="IndexTesting" style="width:200px;">
+    <caption><strong>Index Testing</strong></caption>
+    <tbody>
+      <tr>
+        <td colspan="11" rowspan="1" style="background-color: rgb(204, 204, 204);">&nbsp;</td>
+        <td colspan="3" rowspan="1"><button id="buttonTotal" style="float:right">Afficher les totaux</button></td>
+      </tr>
+      <tr>
+        <td colspan="14" rowspan="1" style="background-color: rgb(255, 204, 153);">Cas index</td>
+      </tr>
+      <tr>
+        <td colspan="14" rowspan="1"><strong>Nombre de cas index dont les services sont offerts</strong></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>&lt;1</td>
+        <td>1-4</td>
+        <td>5-9</td>
+        <td>10-14</td>
+        <td>15-19</td>
+        <td>20-24</td>
+        <td>25-29</td>
+        <td>30-34</td>
+        <td>35-39</td>
+        <td>40-44</td>
+        <td>45-49</td>
+        <td>50+</td>
+        <td>Total</td>
+      </tr>
+      <tr>
+        <td>FSW</td>
+        <td class="row1"><input id="V5vDb5qovHX-RDvoUgSGOyo-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, &lt;1" value="[ Nombre de cas index dont les services sont offerts  FSW, &lt;1 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-CUNIM8f9b3D-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 1-4" value="[ Nombre de cas index dont les services sont offerts  FSW, 1-4 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-J7Dhg9VeCjU-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 5-9" value="[ Nombre de cas index dont les services sont offerts  FSW, 5-9 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-EHicEo8DfBu-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 10-14" value="[ Nombre de cas index dont les services sont offerts  FSW, 10-14 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-Zd1UBqdrSC9-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 15-19" value="[ Nombre de cas index dont les services sont offerts  FSW, 15-19 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-FnYqy8UzLU4-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 20-24" value="[ Nombre de cas index dont les services sont offerts  FSW, 20-24 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-Dk2elS12FjG-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 25-29" value="[ Nombre de cas index dont les services sont offerts  FSW, 25-29 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-hVNK7q9hAJS-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 30-34" value="[ Nombre de cas index dont les services sont offerts  FSW, 30-34 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-t54XB8ZCYTB-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 35-39" value="[ Nombre de cas index dont les services sont offerts  FSW, 35-39 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-OKbZQDaW6d6-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 40-44" value="[ Nombre de cas index dont les services sont offerts  FSW, 40-44 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-c4zGpLckcso-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 45-49" value="[ Nombre de cas index dont les services sont offerts  FSW, 45-49 ]" /></td>
+        <td class="row1"><input id="V5vDb5qovHX-Mkl1SVUQ0QG-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  FSW, 50+" value="[ Nombre de cas index dont les services sont offerts  FSW, 50+ ]" /></td>
+        <td id="total_row1">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>MSM</td>
+        <td class="row2"><input id="V5vDb5qovHX-dOVclpyHxrl-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, &lt;1" value="[ Nombre de cas index dont les services sont offerts  MSM, &lt;1 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-KSLjqIr9WrG-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 1-4" value="[ Nombre de cas index dont les services sont offerts  MSM, 1-4 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-bj2f90Sok5V-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 5-9" value="[ Nombre de cas index dont les services sont offerts  MSM, 5-9 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-ZG1vfyn3HEB-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 10-14" value="[ Nombre de cas index dont les services sont offerts  MSM, 10-14 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-fNpXTAhTLbm-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 15-19" value="[ Nombre de cas index dont les services sont offerts  MSM, 15-19 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-XhTH722P4e2-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 20-24" value="[ Nombre de cas index dont les services sont offerts  MSM, 20-24 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-G7PvmHOSpua-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 25-29" value="[ Nombre de cas index dont les services sont offerts  MSM, 25-29 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-iGJhljX48Sw-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 30-34" value="[ Nombre de cas index dont les services sont offerts  MSM, 30-34 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-VwJPtrfqwXn-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 35-39" value="[ Nombre de cas index dont les services sont offerts  MSM, 35-39 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-jG4HjHVbAdo-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 40-44" value="[ Nombre de cas index dont les services sont offerts  MSM, 40-44 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-grZUBMytHFb-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 45-49" value="[ Nombre de cas index dont les services sont offerts  MSM, 45-49 ]" /></td>
+        <td class="row2"><input id="V5vDb5qovHX-OiL6UaGPrxA-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  MSM, 50+" value="[ Nombre de cas index dont les services sont offerts  MSM, 50+ ]" /></td>
+        <td id="total_row2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>CPS</td>
+        <td class="row3"><input id="V5vDb5qovHX-gXSeMeJhPzc-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, &lt;1" value="[ Nombre de cas index dont les services sont offerts  CPS, &lt;1 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-L4vOsBqImw8-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 1-4" value="[ Nombre de cas index dont les services sont offerts  CPS, 1-4 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-fYTyrdrf56b-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 5-9" value="[ Nombre de cas index dont les services sont offerts  CPS, 5-9 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-HMyW1WuZxUi-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 10-14" value="[ Nombre de cas index dont les services sont offerts  CPS, 10-14 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-w1sl5EcRU1Y-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 15-19" value="[ Nombre de cas index dont les services sont offerts  CPS, 15-19 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-CZmatDFkFEU-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 20-24" value="[ Nombre de cas index dont les services sont offerts  CPS, 20-24 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-bNxiEQSOUYe-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 25-29" value="[ Nombre de cas index dont les services sont offerts  CPS, 25-29 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-dWg1BwPDa6M-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 30-34" value="[ Nombre de cas index dont les services sont offerts  CPS, 30-34 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-tN5JIXHYo2n-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 35-39" value="[ Nombre de cas index dont les services sont offerts  CPS, 35-39 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-q2r2Bs5evdB-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 40-44" value="[ Nombre de cas index dont les services sont offerts  CPS, 40-44 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-AvG3iIPVgRt-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 45-49" value="[ Nombre de cas index dont les services sont offerts  CPS, 45-49 ]" /></td>
+        <td class="row3"><input id="V5vDb5qovHX-ZgeO2rgiaLM-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  CPS, 50+" value="[ Nombre de cas index dont les services sont offerts  CPS, 50+ ]" /></td>
+        <td id="total_row3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Enfant biologique</td>
+        <td class="row4"><input id="V5vDb5qovHX-GNuOlf9uiqC-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, &lt;1" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, &lt;1 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-YONuhaWIwYD-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 1-4" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 1-4 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-QLExcfswTBB-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 5-9" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 5-9 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-T3hTFoRaypc-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 10-14" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 10-14 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-zZBoKULP0Pu-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 15-19" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 15-19 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-DSsDXICVW8C-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 20-24" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 20-24 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-GTd7JUJeVbC-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 25-29" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 25-29 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-HWOgI2yIGuc-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 30-34" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 30-34 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-grBrcfqYiKp-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 35-39" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 35-39 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-j767MiBcrYG-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 40-44" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 40-44 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-EgJVHPAIfGq-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 45-49" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 45-49 ]" /></td>
+        <td class="row4"><input id="V5vDb5qovHX-nWq7O35jVaA-val" name="entryfield" title="Nombre de cas index dont les services sont offerts  Enfant biologiques, 50+" value="[ Nombre de cas index dont les services sont offerts  Enfant biologiques, 50+ ]" /></td>
+        <td id="total_row4">&nbsp;</td>
+      </tr>
+      <!--
+      <tr>
+        <td colspan="11" rowspan="1">&nbsp;</td>
+        <td colspan="3" rowspan="1"><button id="buttonTotal" style="float:right">Afficher les totaux</button></td>
+      </tr>
+          -->
+      <tr>
+        <td colspan="14" rowspan="1"><strong>Nombre de cas index qui ont accept&eacute; de lister ses contacts</strong></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>&lt;1</td>
+        <td>1-4</td>
+        <td>5-9</td>
+        <td>10-14</td>
+        <td>15-19</td>
+        <td>20-24</td>
+        <td>25-29</td>
+        <td>30-34</td>
+        <td>35-39</td>
+        <td>40-44</td>
+        <td>45-49</td>
+        <td>50+</td>
+        <td>Total</td>
+      </tr>
+      <tr>
+        <td>FSW</td>
+        <td class="row5"><input id="IYvgIWSDr6b-RDvoUgSGOyo-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, &lt;1" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, &lt;1 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-CUNIM8f9b3D-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 1-4" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 1-4 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-J7Dhg9VeCjU-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 5-9" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 5-9 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-EHicEo8DfBu-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 10-14" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 10-14 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-Zd1UBqdrSC9-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 15-19" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 15-19 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-FnYqy8UzLU4-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 20-24" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 20-24 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-Dk2elS12FjG-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 25-29" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 25-29 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-hVNK7q9hAJS-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 30-34" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 30-34 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-t54XB8ZCYTB-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 35-39" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 35-39 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-OKbZQDaW6d6-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 40-44" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 40-44 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-c4zGpLckcso-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 45-49" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 45-49 ]" /></td>
+        <td class="row5"><input id="IYvgIWSDr6b-Mkl1SVUQ0QG-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts FSW, 50+" value="[ Nombre de cas index qui ont accepté de lister ses contacts FSW, 50+ ]" /></td>
+        <td id="total_row5">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>MSM</td>
+        <td class="row6"><input id="IYvgIWSDr6b-dOVclpyHxrl-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, &lt;1" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, &lt;1 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-KSLjqIr9WrG-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 1-4" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 1-4 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-bj2f90Sok5V-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 5-9" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 5-9 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-ZG1vfyn3HEB-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 10-14" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 10-14 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-fNpXTAhTLbm-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 15-19" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 15-19 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-XhTH722P4e2-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 20-24" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 20-24 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-G7PvmHOSpua-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 25-29" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 25-29 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-iGJhljX48Sw-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 30-34" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 30-34 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-VwJPtrfqwXn-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 35-39" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 35-39 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-jG4HjHVbAdo-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 40-44" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 40-44 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-grZUBMytHFb-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 45-49" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 45-49 ]" /></td>
+        <td class="row6"><input id="IYvgIWSDr6b-OiL6UaGPrxA-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts MSM, 50+" value="[ Nombre de cas index qui ont accepté de lister ses contacts MSM, 50+ ]" /></td>
+        <td id="total_row6">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>CPS</td>
+        <td class="row7"><input id="IYvgIWSDr6b-gXSeMeJhPzc-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, &lt;1" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, &lt;1 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-L4vOsBqImw8-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 1-4" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 1-4 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-fYTyrdrf56b-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 5-9" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 5-9 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-HMyW1WuZxUi-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 10-14" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 10-14 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-w1sl5EcRU1Y-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 15-19" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 15-19 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-CZmatDFkFEU-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 20-24" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 20-24 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-bNxiEQSOUYe-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 25-29" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 25-29 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-dWg1BwPDa6M-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 30-34" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 30-34 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-tN5JIXHYo2n-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 35-39" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 35-39 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-q2r2Bs5evdB-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 40-44" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 40-44 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-AvG3iIPVgRt-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 45-49" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 45-49 ]" /></td>
+        <td class="row7"><input id="IYvgIWSDr6b-ZgeO2rgiaLM-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts CPS, 50+" value="[ Nombre de cas index qui ont accepté de lister ses contacts CPS, 50+ ]" /></td>
+        <td id="total_row7">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;">Enfant biologique</td>
+        <td class="row8"><input id="IYvgIWSDr6b-GNuOlf9uiqC-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, &lt;1" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, &lt;1 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-YONuhaWIwYD-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 1-4" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 1-4 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-QLExcfswTBB-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 5-9" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 5-9 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-T3hTFoRaypc-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 10-14" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 10-14 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-zZBoKULP0Pu-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 15-19" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 15-19 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-DSsDXICVW8C-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 20-24" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 20-24 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-GTd7JUJeVbC-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 25-29" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 25-29 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-HWOgI2yIGuc-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 30-34" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 30-34 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-grBrcfqYiKp-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 35-39" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 35-39 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-j767MiBcrYG-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 40-44" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 40-44 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-EgJVHPAIfGq-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 45-49" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 45-49 ]" /></td>
+        <td class="row8"><input id="IYvgIWSDr6b-nWq7O35jVaA-val" name="entryfield" title="Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 50+" value="[ Nombre de cas index qui ont accepté de lister ses contacts Enfant biologiques, 50+ ]" /></td>
+        <td id="total_row8">&nbsp;</td>
+      </tr>
+      <!--
+      <tr>
+        <td colspan="11" rowspan="1">&nbsp;</td>
+        <td colspan="3" rowspan="1"><button id="buttonTotal" style="float:right">Afficher les totaux</button></td>
+      </tr>
+          -->
+      <tr>
+        <td colspan="2" rowspan="1">&nbsp;</td>
+        <td colspan="2" rowspan="1">FSW</td>
+        <td colspan="2" rowspan="1">MSM</td>
+        <td colspan="2" rowspan="1">CPS</td>
+        <td colspan="2" rowspan="1">Enfant biologique</td>
+        <td>Total</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">&nbsp;</td>
+        <td>&lt;15</td>
+        <td>&gt;15</td>
+        <td>&lt;15</td>
+        <td>&gt;15</td>
+        <td>&lt;15</td>
+        <td>&gt;15</td>
+        <td>&lt;15</td>
+        <td>&gt;15</td>
+        <td>&nbsp;</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1"><strong>Nombre de cas contact list&eacute;s par les cas index</strong></td>
+        <td class="row9"><input id="rQXVWocSE8r-c3UJHJ19vYP-val" name="entryfield" title="Nombre de cas contact listés par les cas index FSW, &lt;15" value="[ Nombre de cas contact listés par les cas index FSW, &lt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-PQ8h2R5uQRU-val" name="entryfield" title="Nombre de cas contact listés par les cas index FSW, &gt;15" value="[ Nombre de cas contact listés par les cas index FSW, &gt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-tNeorrdSgSM-val" name="entryfield" title="Nombre de cas contact listés par les cas index MSM, &lt;15" value="[ Nombre de cas contact listés par les cas index MSM, &lt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-G4OMlPv6hnY-val" name="entryfield" title="Nombre de cas contact listés par les cas index MSM, &gt;15" value="[ Nombre de cas contact listés par les cas index MSM, &gt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-q2JbVYQHYOl-val" name="entryfield" title="Nombre de cas contact listés par les cas index CPS, &lt;15" value="[ Nombre de cas contact listés par les cas index CPS, &lt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-NKx3IrJsXBf-val" name="entryfield" title="Nombre de cas contact listés par les cas index CPS, &gt;15" value="[ Nombre de cas contact listés par les cas index CPS, &gt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-TgwgslYsM3V-val" name="entryfield" title="Nombre de cas contact listés par les cas index Enfant biologiques, &lt;15" value="[ Nombre de cas contact listés par les cas index Enfant biologiques, &lt;15 ]" /></td>
+        <td class="row9"><input id="rQXVWocSE8r-zowEsQX4vbO-val" name="entryfield" title="Nombre de cas contact listés par les cas index Enfant biologiques, &gt;15" value="[ Nombre de cas contact listés par les cas index Enfant biologiques, &gt;15 ]" /></td>
+        <td id="total_row9">&nbsp;</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <!--
+      <tr>
+        <td colspan="8" rowspan="1">&nbsp;</td>
+        <td colspan="3" rowspan="1"><button id="buttonTotal" style="float:right">Afficher les totaux</button></td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+          -->
+      <tr>
+        <td colspan="14" rowspan="1" style="background-color: rgb(255, 204, 153);">Cas contacts</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">&nbsp;</td>
+        <td colspan="2" rowspan="1">FSW</td>
+        <td colspan="2" rowspan="1">MSM</td>
+        <td colspan="2" rowspan="1">CPS</td>
+        <td colspan="2" rowspan="1">Enfant biologique</td>
+        <td>Total</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1"><strong>Nombre de cas contact (list&eacute;) qui sont test&eacute;s au VIH</strong></td>
+        <td class="row10" colspan="2" rowspan="1"><input id="IxQdvoIjeph-izqhTByLR6A-val" name="entryfield" title="Nombre de cas contact (listé) qui sont testés au VIH  FSW" value="[ Nombre de cas contact (listé) qui sont testés au VIH  FSW ]" /></td>
+        <td class="row10" colspan="2" rowspan="1"><input id="IxQdvoIjeph-pPDb6Kps8Ua-val" name="entryfield" title="Nombre de cas contact (listé) qui sont testés au VIH  MSM" value="[ Nombre de cas contact (listé) qui sont testés au VIH  MSM ]" /></td>
+        <td class="row10" colspan="2" rowspan="1"><input id="IxQdvoIjeph-fl9cyAVLI7h-val" name="entryfield" title="Nombre de cas contact (listé) qui sont testés au VIH  CPS" value="[ Nombre de cas contact (listé) qui sont testés au VIH  CPS ]" /></td>
+        <td class="row10" colspan="2" rowspan="1"><input id="IxQdvoIjeph-nKeU2nEI8sS-val" name="entryfield" title="Nombre de cas contact (listé) qui sont testés au VIH  Enfant biologiques" value="[ Nombre de cas contact (listé) qui sont testés au VIH  Enfant biologiques ]" /></td>
+        <td id="total_row10">&nbsp;</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1"><strong>Nombre de cas contact test&eacute; VIH positif</strong></td>
+        <td class="row11" colspan="2" rowspan="1"><input id="Te4fhvg3Ipv-izqhTByLR6A-val" name="entryfield" title="Nombre de cas contact testé VIH positif  FSW" value="[ Nombre de cas contact testé VIH positif  FSW ]" /></td>
+        <td class="row11" colspan="2" rowspan="1"><input id="Te4fhvg3Ipv-pPDb6Kps8Ua-val" name="entryfield" title="Nombre de cas contact testé VIH positif  MSM" value="[ Nombre de cas contact testé VIH positif  MSM ]" /></td>
+        <td class="row11" colspan="2" rowspan="1"><input id="Te4fhvg3Ipv-fl9cyAVLI7h-val" name="entryfield" title="Nombre de cas contact testé VIH positif  CPS" value="[ Nombre de cas contact testé VIH positif  CPS ]" /></td>
+        <td class="row11" colspan="2" rowspan="1"><input id="Te4fhvg3Ipv-nKeU2nEI8sS-val" name="entryfield" title="Nombre de cas contact testé VIH positif  Enfant biologiques" value="[ Nombre de cas contact testé VIH positif  Enfant biologiques ]" /></td>
+        <td id="total_row11">&nbsp;</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1"><strong>Nombre de cas contact nouvellement li&eacute; aux soins cliniques</strong></td>
+        <td class="row12" colspan="2" rowspan="1"><input id="plSSY5csCcy-izqhTByLR6A-val" name="entryfield" title="Nombre de cas contact nouvellement lié aux soins cliniques FSW" value="[ Nombre de cas contact nouvellement lié aux soins cliniques FSW ]" /></td>
+        <td class="row12" colspan="2" rowspan="1"><input id="plSSY5csCcy-pPDb6Kps8Ua-val" name="entryfield" title="Nombre de cas contact nouvellement lié aux soins cliniques MSM" value="[ Nombre de cas contact nouvellement lié aux soins cliniques MSM ]" /></td>
+        <td class="row12" colspan="2" rowspan="1"><input id="plSSY5csCcy-fl9cyAVLI7h-val" name="entryfield" title="Nombre de cas contact nouvellement lié aux soins cliniques CPS" value="[ Nombre de cas contact nouvellement lié aux soins cliniques CPS ]" /></td>
+        <td class="row12" colspan="2" rowspan="1"><input id="plSSY5csCcy-nKeU2nEI8sS-val" name="entryfield" title="Nombre de cas contact nouvellement lié aux soins cliniques Enfant biologiques" value="[ Nombre de cas contact nouvellement lié aux soins cliniques Enfant biologiques ]" /></td>
+        <td id="total_row12">&nbsp;</td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+      <!--
+      <tr>
+        <td colspan="8" rowspan="1">&nbsp;</td>
+        <td colspan="3" rowspan="1"><button id="buttonTotal" style="float:right">Afficher les totaux</button></td>
+        <td colspan="3" rowspan="1" style="background-color: rgb(51, 51, 51);">&nbsp;</td>
+      </tr>
+          -->
+    </tbody>
+  </table>
+  
+  <p>&nbsp;</p>
+  

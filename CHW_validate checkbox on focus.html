@@ -1,0 +1,1383 @@
+<script>
+  $(document).ready(function(){
+    
+    $(".zoneRequired").each(function() {
+      //console.log($(this).children()[0]);
+      $(this).children()[0].setAttribute("required", "required");
+    });
+    $("#I4jgSRAvvji-HllvX50cXC0-val").focus(function(){
+      //Activated validation on activity
+        var oneCheckedActivite=false;
+        $(".Activite").each(function() {
+          console.log($(this).children()[0].id);
+          if($("#"+$(this).children()[0].id).is(':checked'))
+          {
+            oneCheckedActivite=true;
+          }
+        });
+        if(oneCheckedActivite)
+        {
+          console.log("At least one checked");
+          /*$(".Activite").each(function() {
+            $(this).removeAttr("required", "required");
+          });*/
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+        }
+        else
+        {
+          var sectionTitle="Section 2: Activité déroulée. Au moins une activité doit être choisie";
+          $("#titreActivite").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+          console.log("No activities checked");
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).attr("required", "required");
+          });
+        }
+        //Activated validation on theme
+        var oneCheckedTheme=false;
+        $(".Theme").each(function() {
+          console.log($(this).children()[0].id);
+          if($("#"+$(this).children()[0].id).is(':checked'))
+          {
+            oneCheckedTheme=true;
+          }
+        });
+        if(oneCheckedTheme)
+        {
+          console.log("At least one checked");
+          /*$(".Activite").each(function() {
+            $(this).removeAttr("required", "required");
+          });*/
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+        }
+        else
+        {
+          var sectionTitle="Section 3: Thème développé. (Au moins un theme doit être choisie)";
+          $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+          console.log("No theme checked");
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).attr("required", "required");
+          });
+        }
+        //Activated validation on MotifReference
+        var oneCheckedReference=false;
+        $(".MotifReference").each(function() {
+          console.log($(this).children()[0].id);
+          if($("#"+$(this).children()[0].id).is(':checked'))
+          {
+            oneCheckedReference=true;
+          }
+        });
+        if(oneCheckedReference)
+        {
+          console.log("At least one checked");
+          /*$(".Activite").each(function() {
+            $(this).removeAttr("required", "required");
+          });*/
+          $(".MotifReference").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+        }
+        else
+        {
+          var sectionTitle="Motifs de la référence. (Au moins un motif doit être choisi)";
+          $("#titreMotifReference").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+          console.log("No motif checked");
+          $(".MotifReference").each(function() {
+            $("#"+$(this).children()[0].id).attr("required", "required");
+          });
+        }
+        
+        //Activated validation on Motif coupon
+        var oneCheckedCoupon=false;
+        $(".MotifCoupon").each(function() {
+          console.log($(this).children()[0].id);
+          if($("#"+$(this).children()[0].id).is(':checked'))
+          {
+            oneCheckedCoupon=true;
+          }
+        });
+        if(oneCheckedCoupon)
+        {
+          console.log("At least one checked");
+          /*$(".Activite").each(function() {
+            $(this).removeAttr("required", "required");
+          });*/
+          $(".MotifCoupon").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+        }
+        else
+        {
+          var sectionTitle="Motifs coupons. (Au moins un motif doit être choisi)";
+          $("#titreMotifCoupon").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+          console.log("No motif checked");
+          $(".MotifCoupon").each(function() {
+            $("#"+$(this).children()[0].id).attr("required", "required");
+          });
+        }
+      });
+    //Activites validation rules
+    $("#MIZzoV61M8N-HllvX50cXC0-val").change(function(){
+      if($(this).is(':checked'))
+      {
+        console.log("checked activity...");
+        //removing required to other activities
+        $(".Activite").each(function() {
+          $("#"+$(this).children()[0].id).removeAttr("required", "required");
+        });
+        var sectionTitle="Section 2: Activité déroulée";
+        //$("#titreActivite").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+      }
+      else
+      {
+        //console.log("Uncheched activity...");
+        var oneCheckedActivite=false;
+        $(".Activite").each(function() {
+          console.log($(this).children()[0].id);
+          if($("#"+$(this).children()[0].id).is(':checked'))
+          {
+            oneCheckedActivite=true;
+          }
+        });
+        if(oneCheckedActivite)
+        {
+          //console.log("At least one checked");
+          /*$(".Activite").each(function() {
+            $(this).removeAttr("required", "required");
+          });*/
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+        }
+        else
+        {
+          var sectionTitle="Section 2: Activité déroulée. Au moins une activité doit être choisie";
+          $("#titreActivite").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+          console.log("No activities checked");
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).attr("required", "required");
+          });
+        }
+      }
+    });
+    $("#NAQYPEIvj1H-HllvX50cXC0-val").change(function(){
+      if($(this).is(':checked'))
+      {
+        console.log("checked activity...");
+        //removing required to other activities
+        $(".Activite").each(function() {
+          $("#"+$(this).children()[0].id).removeAttr("required", "required");
+        });
+        var sectionTitle="Section 2: Activité déroulée";
+        //$("#titreActivite").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+      }
+      else
+      {
+        //console.log("Uncheched activity...");
+        var oneCheckedActivite=false;
+        $(".Activite").each(function() {
+          console.log($(this).children()[0].id);
+          if($("#"+$(this).children()[0].id).is(':checked'))
+          {
+            oneCheckedActivite=true;
+          }
+        });
+        if(oneCheckedActivite)
+        {
+          //console.log("At least one checked");
+          /*$(".Activite").each(function() {
+            $(this).removeAttr("required", "required");
+          });*/
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+        }
+        else
+        {
+          var sectionTitle="Section 2: Activité déroulée. Au moins une activité doit être choisie";
+          $("#titreActivite").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+          console.log("No activities checked");
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).attr("required", "required");
+          });
+        }
+      }
+    });
+    $("#sdNZZMCAoCL-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Activite").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 2: Activité déroulée";
+          //$("#titreActivite").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Activite").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Activite").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 2: Activité déroulée. Au moins une activité doit être choisie";
+            $("#titreActivite").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No activities checked");
+            $(".Activite").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    //Themes validation rules
+    $("#V2rJ41N9I40-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#aFvZUwFrUVm-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#tpcC69H5aQi-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#V00Tc80EFv9-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#zBioTr3CnMK-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#VWDXZpGMdfr-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#plpOAXvirfB-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#clXKYm0auhj-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#YCurFcKLNZH-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#JIju3jnPtIh-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#lnJiuktK71z-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#OLyxIlTe1WS-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".Theme").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Section 3: Thème développé";
+          //$("#titreTheme").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+          
+          $("#zQ9aiKOLnC6-HllvX50cXC0-val").removeAttr('disabled','disabled');
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          $("#zQ9aiKOLnC6-HllvX50cXC0-val").val('');
+          $("#zQ9aiKOLnC6-HllvX50cXC0-val").attr('disabled','disabled');
+          var oneCheckedActivite=false;
+          $(".Theme").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Section 3: Thème développé. (Au moins un thème doit être choisie)";
+            $("#titreTheme").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No theme checked");
+            $(".Theme").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    //MotifReference validation rules
+    $("#hZSU6WVIPNV-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifReference").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs de la référence";
+          //$("#titreMotifReference").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".MotifReference").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs de la référence. (Au moins un motif doit être choisi)";
+            $("#titreMotifReference").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#ZiaRf0BIvkW-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifReference").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs de la référence";
+          //$("#titreMotifReference").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".MotifReference").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs de la référence. (Au moins un motif doit être choisi)";
+            $("#titreMotifReference").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#d5UVeXrWRnF-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifReference").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs de la référence";
+          //$("#titreMotifReference").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".MotifReference").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs de la référence. (Au moins un motif doit être choisi)";
+            $("#titreMotifReference").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#cZ64v2pvIPw-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifReference").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs de la référence";
+          //$("#titreMotifReference").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+          $("#sV7mzbnvbLb-HllvX50cXC0-val").removeAttr('disabled','disabled');
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          $("#sV7mzbnvbLb-HllvX50cXC0-val").attr('disabled','disabled');
+          var oneCheckedActivite=false;
+          $(".MotifReference").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs de la référence. (Au moins un motif doit être choisi)";
+            $("#titreMotifReference").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifReference").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    //Motif coupons validation rules
+    $("#AY1RoibTsRz-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifCoupon").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs coupons";
+          //$("#titreMotifCoupon").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".MotifCoupon").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifCoupon").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs coupons. (Au moins un motif doit être choisi)";
+            $("#titreMotifCoupon").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifCoupon").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#gNwA5OwvMOG-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifCoupon").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs coupons";
+          //$("#titreMotifCoupon").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          var oneCheckedActivite=false;
+          $(".MotifCoupon").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifCoupon").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs coupons. (Au moins un motif doit être choisi)";
+            $("#titreMotifCoupon").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifCoupon").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    $("#etQBxrbP1DP-HllvX50cXC0-val").change(function(){
+        if($(this).is(':checked'))
+        {
+          console.log("checked activity...");
+          //removing required to other activities
+          $(".MotifCoupon").each(function() {
+            $("#"+$(this).children()[0].id).removeAttr("required", "required");
+          });
+          var sectionTitle="Motifs coupons";
+          //$("#titreMotifCoupon").text(sectionTitle).css({"color": "black","font-weight":"bold"});
+          $("#jvisusvAauR-HllvX50cXC0-val").removeAttr('disabled','disabled');
+        }
+        else
+        {
+          //console.log("Uncheched activity...");
+          $("#jvisusvAauR-HllvX50cXC0-val").attr('disabled','disabled');
+          var oneCheckedActivite=false;
+          $(".MotifCoupon").each(function() {
+            console.log($(this).children()[0].id);
+            if($("#"+$(this).children()[0].id).is(':checked'))
+            {
+              oneCheckedActivite=true;
+            }
+          });
+          if(oneCheckedActivite)
+          {
+            //console.log("At least one checked");
+            /*$(".Activite").each(function() {
+              $(this).removeAttr("required", "required");
+            });*/
+            $(".MotifCoupon").each(function() {
+              $("#"+$(this).children()[0].id).removeAttr("required", "required");
+            });
+          }
+          else
+          {
+            var sectionTitle="Motifs coupons. (Au moins un motif doit être choisi)";
+            $("#titreMotifCoupon").text(sectionTitle).css({"color": "red","font-weight":"bold"});
+            console.log("No motif checked");
+            $(".MotifCoupon").each(function() {
+              $("#"+$(this).children()[0].id).attr("required", "required");
+            });
+          }
+        }
+      });
+    //Deactivated zonetext autres by defaulf on load
+    if(!$("#OLyxIlTe1WS-HllvX50cXC0-val").is(':checked'))
+    {
+      $("#zQ9aiKOLnC6-HllvX50cXC0-val").attr('disabled','disabled');
+    }
+    else
+    {
+      $("#zQ9aiKOLnC6-HllvX50cXC0-val").removeAttr('disabled','disabled');
+    }
+    if(!$("#cZ64v2pvIPw-HllvX50cXC0-val").is(':checked'))
+    {
+      $("#sV7mzbnvbLb-HllvX50cXC0-val").attr('disabled','disabled');
+    }
+    else
+    {
+      $("#sV7mzbnvbLb-HllvX50cXC0-val").removeAttr('disabled','disabled');
+    }
+    if(!$("#etQBxrbP1DP-HllvX50cXC0-val").is(':checked'))
+    {
+      $("#jvisusvAauR-HllvX50cXC0-val").attr('disabled','disabled');
+    }
+    else
+    {
+      $("#jvisusvAauR-HllvX50cXC0-val").removeAttr('disabled','disabled');
+    }
+  
+  });
+  </script>
+  <style type="text/css">#section1 {
+   width:700px;
+   }
+  .zoneText {
+   width:50%;
+  }
+  .zoneText input{
+   width:100%;
+  text-align:left;
+  padding-right:1px;
+  }
+  </style>
+  <table border="1" cellpadding="1" cellspacing="1" id="section1" style="width:700px;">
+    <caption>FICHE RELAIS COMMUNAITAIRES</caption>
+    <tbody>
+      <tr>
+        <td colspan="4">
+        <p><span style="font-size:14px;"><strong>Section 1: Informations g&eacute;n&eacute;rales</strong></span></p>
+        </td>
+      </tr>
+      <tr>
+        <td>Nom du relais communautaire</td>
+        <td class="zoneText zoneRequired"><input id="I4jgSRAvvji-HllvX50cXC0-val" name="entryfield" title="Comm_Nom du relais communautaire" value="[ Comm_Nom du relais communautaire ]" /></td>
+        <td>Nom du superviseur</td>
+        <td class="zoneText zoneRequired"><input id="mHKZTu5H944-HllvX50cXC0-val" name="entryfield" title="Comm_Nom du superviseur" value="[ Comm_Nom du superviseur ]" /></td>
+      </tr>
+      <tr>
+        <td>Quartier/zone d&#39;intervention</td>
+        <td class="zoneText zoneRequired"><input id="cP4Qds6x83V-HllvX50cXC0-val" name="entryfield" title="Comm_Quartier_zone d'intervention" value="[ Comm_Quartier_zone d'intervention ]" /></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="4"><span id="titreActivite" style="font-size:14px;"><strong>Section 2: Activit&eacute; d&eacute;roul&eacute;e</strong></span></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Visite &agrave; domicile</td>
+        <td class="Activite" colspan="2" rowspan="1"><input id="MIZzoV61M8N-HllvX50cXC0-val" name="entryfield" title="Comm_Visite a domicile" value="[ Comm_Visite a domicile ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Causerie</td>
+        <td class="Activite" colspan="2" rowspan="1"><input id="NAQYPEIvj1H-HllvX50cXC0-val" name="entryfield" title="Comm_Causerie" value="[ Comm_Causerie ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Mobilisation sociale</td>
+        <td class="Activite" colspan="2" rowspan="1"><input id="sdNZZMCAoCL-HllvX50cXC0-val" name="entryfield" title="Comm_Mobilisation sociale" value="[ Comm_Mobilisation sociale ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="4"><span id="titreTheme">Section 3: Th&egrave;me d&eacute;velopp&eacute;</span></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">G&eacute;n&eacute;ralit&eacute;s sur la PF</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="V2rJ41N9I40-HllvX50cXC0-val" name="entryfield" title="Comm_Généralités sur la PF" value="[ Comm_Généralités sur la PF ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">SSRAJ</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="aFvZUwFrUVm-HllvX50cXC0-val" name="entryfield" title="Comm_SSRAJ" value="[ Comm_SSRAJ ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Rumeurs sur les m&eacute;thodes</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="tpcC69H5aQi-HllvX50cXC0-val" name="entryfield" title="Comm_Rumeurs sur les méthodes" value="[ Comm_Rumeurs sur les méthodes ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Gamme de m&eacute;thode</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="V00Tc80EFv9-HllvX50cXC0-val" name="entryfield" title="Comm_Gamme de méthode" value="[ Comm_Gamme de méthode ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">DIU</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="zBioTr3CnMK-HllvX50cXC0-val" name="entryfield" title="Comm_DIU" value="[ Comm_DIU ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Implants</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="VWDXZpGMdfr-HllvX50cXC0-val" name="entryfield" title="Comm_implants" value="[ Comm_implants ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Pilule</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="plpOAXvirfB-HllvX50cXC0-val" name="entryfield" title="Comm_Pilule" value="[ Comm_Pilule ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Injectables</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="clXKYm0auhj-HllvX50cXC0-val" name="entryfield" title="Comm_Injectables" value="[ Comm_Injectables ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Contraception d&#39;urgence</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="YCurFcKLNZH-HllvX50cXC0-val" name="entryfield" title="Comm_Contraception d'urgence" value="[ Comm_Contraception d'urgence ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Pr&eacute;servatifs</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="JIju3jnPtIh-HllvX50cXC0-val" name="entryfield" title="Comm_Préservatifs" value="[ Comm_Préservatifs ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1">Relations homme/femmes</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="lnJiuktK71z-HllvX50cXC0-val" name="entryfield" title="Comm_Relations homme/femmes" value="[ Comm_Relations homme/femmes ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="2">Autres: pr&eacute;ciser</td>
+        <td class="Theme" colspan="2" rowspan="1"><input id="OLyxIlTe1WS-HllvX50cXC0-val" name="entryfield" title="Comm_Autres thème à preciser" value="[ Comm_Autres thème à preciser ]" /></td>
+      </tr>
+      <tr>
+        <td class="zoneText autrePreciser" colspan="2" rowspan="1"><input id="zQ9aiKOLnC6-HllvX50cXC0-val" name="entryfield" title="Comm_Autres thème précisé" value="[ Comm_Autres thème précisé ]" /></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p><span style="font-size:14px;"><strong>Section 4: R&eacute;sultats personnes inform&eacute;es</strong></span></p>
+  
+  <table border="1" cellpadding="1" cellspacing="1" style="width:700px;">
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="3" rowspan="1">Personnes inform&eacute;es/relais</td>
+        <td colspan="3" rowspan="1">Personnes r&eacute;f&eacute;r&eacute;es/relais</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>15-19 ans</td>
+        <td>20-24 ans</td>
+        <td>25-49 ans</td>
+        <td>15-19 ans</td>
+        <td>20-24 ans</td>
+        <td>25-49 ans</td>
+      </tr>
+      <tr>
+        <td>Femmes</td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-dvXbmcJeuQR-val" name="entryfield" title="Comm_Résultats personnes informées Personnes informées par relais, 15-19, Femme" value="[ Comm_Résultats personnes informées Personnes informées par relais, 15-19, Femme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-kSGeBcZujTt-val" name="entryfield" title="Comm_Résultats personnes informées Personnes informées par relais, 20-24, Femme" value="[ Comm_Résultats personnes informées Personnes informées par relais, 20-24, Femme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-ImxlFfHh2uE-val" name="entryfield" title="Comm_Résultats personnes informées Personnes informées par relais, 25-49, Femme" value="[ Comm_Résultats personnes informées Personnes informées par relais, 25-49, Femme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-ZhpXHHjMHNE-val" name="entryfield" title="Comm_Résultats personnes informées Personnes referées par relais, 15-19, Femme" value="[ Comm_Résultats personnes informées Personnes referées par relais, 15-19, Femme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-XvCHF5izkl6-val" name="entryfield" title="Comm_Résultats personnes informées Personnes referées par relais, 20-24, Femme" value="[ Comm_Résultats personnes informées Personnes referées par relais, 20-24, Femme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-TFci3syYByU-val" name="entryfield" title="Comm_Résultats personnes informées Personnes referées par relais, 25-49, Femme" value="[ Comm_Résultats personnes informées Personnes referées par relais, 25-49, Femme ]" /></td>
+      </tr>
+      <tr>
+        <td>Hommes</td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-x7dWB01QgAr-val" name="entryfield" title="Comm_Résultats personnes informées Personnes informées par relais, 15-19, Homme" value="[ Comm_Résultats personnes informées Personnes informées par relais, 15-19, Homme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-gFUhguQXWbx-val" name="entryfield" title="Comm_Résultats personnes informées Personnes informées par relais, 20-24, Homme" value="[ Comm_Résultats personnes informées Personnes informées par relais, 20-24, Homme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-SlncE3TB7Si-val" name="entryfield" title="Comm_Résultats personnes informées Personnes informées par relais, 25-49, Homme" value="[ Comm_Résultats personnes informées Personnes informées par relais, 25-49, Homme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-MyoMB2cQD7C-val" name="entryfield" title="Comm_Résultats personnes informées Personnes referées par relais, 15-19, Homme" value="[ Comm_Résultats personnes informées Personnes referées par relais, 15-19, Homme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-l4cGKXhEghu-val" name="entryfield" title="Comm_Résultats personnes informées Personnes referées par relais, 20-24, Homme" value="[ Comm_Résultats personnes informées Personnes referées par relais, 20-24, Homme ]" /></td>
+        <td class="zoneRequired"><input id="vwskIXzJUFe-Kw9EEh4CSzd-val" name="entryfield" title="Comm_Résultats personnes informées Personnes referées par relais, 25-49, Homme" value="[ Comm_Résultats personnes informées Personnes referées par relais, 25-49, Homme ]" /></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+    <caption>
+    <p style="text-align: left;"><span style="font-size:14px;"><strong>Section 5: R&eacute;sultats personnes r&eacute;f&eacute;r&eacute;es</strong></span></p>
+    </caption>
+    <tbody>
+      <tr>
+        <td colspan="4">Personnes r&eacute;f&eacute;r&eacute;es/relais</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>15-19 ans</td>
+        <td>20-24 ans</td>
+        <td>25-49 ans</td>
+      </tr>
+      <tr>
+        <td>Femmes</td>
+        <td class="zoneRequired"><input id="KPw5IVNG9Ib-ZhpXHHjMHNE-val" name="entryfield" title="Comm_Résultats personnes référées Personnes referées par relais, 15-19, Femme" value="[ Comm_Résultats personnes référées Personnes referées par relais, 15-19, Femme ]" /></td>
+        <td class="zoneRequired"><input id="KPw5IVNG9Ib-XvCHF5izkl6-val" name="entryfield" title="Comm_Résultats personnes référées Personnes referées par relais, 20-24, Femme" value="[ Comm_Résultats personnes référées Personnes referées par relais, 20-24, Femme ]" /></td>
+        <td class="zoneRequired"><input id="KPw5IVNG9Ib-TFci3syYByU-val" name="entryfield" title="Comm_Résultats personnes référées Personnes referées par relais, 25-49, Femme" value="[ Comm_Résultats personnes référées Personnes referées par relais, 25-49, Femme ]" /></td>
+      </tr>
+      <tr>
+        <td>Hommes</td>
+        <td class="zoneRequired"><input id="KPw5IVNG9Ib-MyoMB2cQD7C-val" name="entryfield" title="Comm_Résultats personnes référées Personnes referées par relais, 15-19, Homme" value="[ Comm_Résultats personnes référées Personnes referées par relais, 15-19, Homme ]" /></td>
+        <td class="zoneRequired"><input id="KPw5IVNG9Ib-l4cGKXhEghu-val" name="entryfield" title="Comm_Résultats personnes référées Personnes referées par relais, 20-24, Homme" value="[ Comm_Résultats personnes référées Personnes referées par relais, 20-24, Homme ]" /></td>
+        <td class="zoneRequired"><input id="KPw5IVNG9Ib-Kw9EEh4CSzd-val" name="entryfield" title="Comm_Résultats personnes référées Personnes referées par relais, 25-49, Homme" value="[ Comm_Résultats personnes référées Personnes referées par relais, 25-49, Homme ]" /></td>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table border="1" cellpadding="1" cellspacing="1" style="width:550px;">
+    <caption>
+    <p id="titreMotifReference" style="text-align: left;"><strong>Motifs de la r&eacute;f&eacute;rence</strong></p>
+    </caption>
+    <tbody>
+      <tr>
+        <td>Utilisation nouvelle m&eacute;thode</td>
+        <td class="MotifReference"><input id="hZSU6WVIPNV-HllvX50cXC0-val" name="entryfield" title="Comm_Utilisation nouvelle méthode" value="[ Comm_Utilisation nouvelle méthode ]" /></td>
+      </tr>
+      <tr>
+        <td>Effets secondaires</td>
+        <td class="MotifReference"><input id="ZiaRf0BIvkW-HllvX50cXC0-val" name="entryfield" title="Comm_Effets secondaires" value="[ Comm_Effets secondaires ]" /></td>
+      </tr>
+      <tr>
+        <td>JSPF</td>
+        <td class="MotifReference"><input id="d5UVeXrWRnF-HllvX50cXC0-val" name="entryfield" title="Comm_JSPF" value="[ Comm_JSPF ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="2">Autres (&agrave; Pr&eacute;ciser)</td>
+        <td class="MotifReference"><input id="cZ64v2pvIPw-HllvX50cXC0-val" name="entryfield" title="Comm_Autres motifs de la référence" value="[ Comm_Autres motifs de la référence ]" /></td>
+      </tr>
+      <tr>
+        <td class="zoneText autrePreciser"><input id="sV7mzbnvbLb-HllvX50cXC0-val" name="entryfield" title="Comm_Autres motifs de la référence à préciser" value="[ Comm_Autres motifs de la référence à préciser ]" /></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+    <caption>
+    <p style="text-align: left;"><strong>R&eacute;sultats distribution de coupons</strong></p>
+    </caption>
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td colspan="3" rowspan="1">Personnes ayant re&ccedil;u un coupon</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>15-19 ans</td>
+        <td>20-24 ans</td>
+        <td>25-49 ans</td>
+      </tr>
+      <tr>
+        <td>Femmes</td>
+        <td class="zoneRequired"><input id="iRaA3PQx3sv-AiPvK9AeE7r-val" name="entryfield" title="Comm_Personnes ayant reçu un coupon 15-19, Femme" value="[ Comm_Personnes ayant reçu un coupon 15-19, Femme ]" /></td>
+        <td class="zoneRequired"><input id="iRaA3PQx3sv-oOCBDO8chdZ-val" name="entryfield" title="Comm_Personnes ayant reçu un coupon 20-24, Femme" value="[ Comm_Personnes ayant reçu un coupon 20-24, Femme ]" /></td>
+        <td class="zoneRequired"><input id="iRaA3PQx3sv-ukKtSXFnXIj-val" name="entryfield" title="Comm_Personnes ayant reçu un coupon 25-49, Femme" value="[ Comm_Personnes ayant reçu un coupon 25-49, Femme ]" /></td>
+      </tr>
+      <tr>
+        <td>Hommes</td>
+        <td class="zoneRequired"><input id="iRaA3PQx3sv-gzhzWuKvI1F-val" name="entryfield" title="Comm_Personnes ayant reçu un coupon 15-19, Homme" value="[ Comm_Personnes ayant reçu un coupon 15-19, Homme ]" /></td>
+        <td class="zoneRequired"><input id="iRaA3PQx3sv-xuDsCQI10AG-val" name="entryfield" title="Comm_Personnes ayant reçu un coupon 20-24, Homme" value="[ Comm_Personnes ayant reçu un coupon 20-24, Homme ]" /></td>
+        <td class="zoneRequired"><input id="iRaA3PQx3sv-wgWcxzyEYkL-val" name="entryfield" title="Comm_Personnes ayant reçu un coupon 25-49, Homme" value="[ Comm_Personnes ayant reçu un coupon 25-49, Homme ]" /></td>
+      </tr>
+      <tr>
+        <td>TOTAL</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+    <caption>
+    <p id="titreMotifCoupon" style="text-align: left;"><strong>Motifs coupons</strong></p>
+    </caption>
+    <tbody>
+      <tr>
+        <td>Services PF</td>
+        <td class="MotifCoupon"><input id="AY1RoibTsRz-HllvX50cXC0-val" name="entryfield" title="Comm_Services PF" value="[ Comm_Services PF ]" /></td>
+      </tr>
+      <tr>
+        <td>Services IST</td>
+        <td class="MotifCoupon"><input id="gNwA5OwvMOG-HllvX50cXC0-val" name="entryfield" title="Comm_Services IST" value="[ Comm_Services IST ]" /></td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="2">Autres &nbsp;&agrave; pr&eacute;ciser</td>
+        <td class="MotifCoupon"><input id="etQBxrbP1DP-HllvX50cXC0-val" name="entryfield" title="Comm_Autres motifs coupons" value="[ Comm_Autres motifs coupons ]" /></td>
+      </tr>
+      <tr>
+        <td class="zoneText autrePreciser"><input id="jvisusvAauR-HllvX50cXC0-val" name="entryfield" title="Comm_Autres motifs coupons à préciser" value="[ Comm_Autres motifs coupons à préciser ]" /></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <p>&nbsp;</p>
+  
